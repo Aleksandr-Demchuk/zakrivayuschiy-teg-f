@@ -20,11 +20,11 @@
   background-image: var(--page-bg-img, none);
   background-size: cover;
   background-attachment: fixed;
+  font-family: var(--page-font-family, "Inter", sans-serif); 
   font-variation-settings: "wght" var(--page-fw, 400);
   min-block-size: 100dvb;
   min-inline-size: 320px;
   color: var(--text-color, #000000);
-  font-family: var(--page-font-family, "Inter", sans-serif); 
 }
 
 .header {
@@ -34,14 +34,6 @@
   font-family: var(--page-alt-font-family, "PressStart2P", fantasy);
   line-height: normal;
   text-transform: uppercase;
-}
-
-.card {
-  margin-inline: auto;
-  background: var(--page-bg-color, #ffffff);
-  border: 2px solid var(--text-color, #000000);
-  background: var(--page-bg-color, #ffffff);
-  max-inline-size: 696px;
 }
 
 .page__header {                                                               
@@ -231,7 +223,7 @@ button:focus {
   outline: none;
 }
 
-.button__text {
+.button__text, .button__icon {
   color: var(--button-text-color, #ffffff);
   mix-blend-mode: difference;
 }
@@ -264,11 +256,6 @@ button:focus {
   align-items: center;
   gap: 10px;
   padding: 15px 20px;
-}
-
-.button__icon {
-  color: var(--button-text-color, #ffffff);
-  mix-blend-mode: difference;
 }
 
 .button__icon {
@@ -344,5 +331,31 @@ button:focus {
 
 .filter-hue-rotate {
   filter: hue-rotate(210deg);
+}
+
+@media (width < 375px) {
+  .button__icon {
+    block-size: 28px;
+    inline-size: 28px;
+  }
+
+  .button--save {
+    flex-direction: column;
+  }
+
+  .modal {
+    padding: 28px 34px 28px 40px;
+    max-inline-size: 340px;
+  }
+}
+
+@supports (
+  (-webkit-text-stroke: 1px var(--page-bg-color, #ffffff)) or (text-stroke: 1px var(--page-bg-color, #ffffff))
+) {
+  .card__img-label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--page-bg-color, #ffffff);
+    text-stroke: 1px var(--page-bg-color, #ffffff);
+  }
 }
 
