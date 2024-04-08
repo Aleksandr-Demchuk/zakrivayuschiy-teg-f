@@ -348,6 +348,15 @@ button:focus {
     padding: 30px 40px;
     max-inline-size: 341px;
 }
+
+.card__img-label {
+  inset-inline-end: 10px;
+  inset-block-start: 22px;
+}
+
+.main {
+  padding-bottom: 98px;
+}
 }
 
 @supports (
